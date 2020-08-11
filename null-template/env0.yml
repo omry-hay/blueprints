@@ -6,6 +6,18 @@ deploy:
             - aws --version
             - gcloud --version
             - az --version
+            - python --version
+            - python3 --version
+            - git --version
+            - npm --version
+            - yarn --version
+            - node --version
+            - pip --version
+            - pip2 --version
+            - pip3 --version
+            - kubectl version
+            - tfenv --version
+            - terraform --version
 destroy:
     onCompletion:
       - echo "destroy-onCompletion"
