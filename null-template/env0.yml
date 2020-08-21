@@ -4,7 +4,6 @@ deploy:
   steps:
     terraformInit:
       before:
-        - /opt/tfenv/bin/terraform version
-        - aws --version
-        - gcloud --version
-        - az --version
+        - az extension add --name azure-devops
+        - az devops configure --defaults organization=https://dev.azure.com/omryhay/
+        - az pipelines run --branch azure-pipelines --name env0-test
