@@ -6,4 +6,5 @@ deploy:
       before:
         - az extension add --name azure-devops
         - az devops configure --defaults organization=https://dev.azure.com/omryhay/
+        - az devops configure --defaults project=env0-test
         - az pipelines run --branch azure-pipelines --name env0-test
