@@ -7,5 +7,5 @@ deploy:
         - az extension add --name azure-devops
         - az devops configure --defaults organization=https://dev.azure.com/omryhay
         - az devops configure --defaults project=env0-test
-        - az devops login --organization https://dev.azure.com/omryhay
+        - az login --service-principal --username ${ARM_CLIENT_ID} --password ${ARM_CLIENT_SECRET} --tenant ${ARM_TENANT_ID}
         - az pipelines run --branch azure-pipelines --name env0-test
