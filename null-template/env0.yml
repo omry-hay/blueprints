@@ -20,4 +20,4 @@ deploy:
             - terraform --version
 destroy:
     onCompletion:
-      - echo "destroy-onCompletion!!"
+      - echo "destroy-onCompletion!!!"
