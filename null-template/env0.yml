@@ -3,6 +3,8 @@ deploy:
     steps:
         setupVariables:
           after:
+            - curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+            - helm version
             - aws --version
             - gcloud --version
             - az --version
