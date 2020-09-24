@@ -3,11 +3,6 @@ deploy:
     steps:
         setupVariables:
           after:
-            - curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-linux-alpine-x64.tar.gz -o powershell.tar.gz
-            - tar zxf powershell.tar.gz -C /opt/
-            - ls /opt/
-            - chmod +x /opt/pwsh
-            - pwsh
             - curl -fsSL https://get.helm.sh/helm-v3.3.1-linux-amd64.tar.gz -o helm-v3.3.1-linux-amd64.tar.gz 
             - tar -zxvf helm-v3.3.1-linux-amd64.tar.gz 
             - mv linux-amd64/helm /opt/helm
