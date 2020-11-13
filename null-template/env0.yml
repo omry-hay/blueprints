@@ -4,9 +4,11 @@ deploy:
     setupVariables:
       after: 
         - |
+            date
             curl https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.2/terragrunt_linux_386 -L -o terragrunt
             chmod u+x terragrunt
             mv terragrunt /opt/
+            date
             terragrunt --version
 
 destroy:
@@ -14,7 +16,9 @@ destroy:
     setupVariables:
       after:
         - | 
+            date
             curl https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.2/terragrunt_linux_386 -L -o terragrunt
             chmod u+x terragrunt
             mv terragrunt /opt/
+            date
             terragrunt --version
