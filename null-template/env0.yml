@@ -8,3 +8,13 @@ deploy:
             chmod u+x terragrunt
             mv terragrunt /opt/
             terragrunt --version
+
+destroy:
+  steps:
+    setupVariables:
+      after:
+        - | 
+            curl https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.2/terragrunt_linux_386 -L -o terragrunt
+            chmod u+x terragrunt
+            mv terragrunt /opt/
+            terragrunt --version
