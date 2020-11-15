@@ -1,0 +1,30 @@
+version: 1
+deploy:
+  steps:
+    setupVariables:
+      after:
+        - |
+            curl https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.2/terragrunt_linux_386 -L -o terragrunt
+            chmod u+x terragrunt
+            mv terragrunt /opt/
+            terragrunt --version
+    terraformApply:
+      after:
+        - |
+            cd live/prod/
+            terragrunt apply-all
+
+destroy:
+  steps:
+    setupVariables:
+      after:
+        - |
+            curl https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.2/terragrunt_linux_386 -L -o terragrunt
+            chmod u+x terragrunt
+            mv terragrunt /opt/
+            terragrunt --version
+    terraformDestroy:
+      after:
+        - |
+            cd live/prod/
+            terragrunt destroy-all
