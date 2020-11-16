@@ -4,9 +4,7 @@ deploy:
     setupVariables:
       after: 
         - |
-            whoami
-            apk add openssl
-            openssl-dev version
+            openssl version
             date
             curl https://github.com/gruntwork-io/terragrunt/releases/download/v0.26.2/terragrunt_linux_386 -L -o terragrunt
             chmod u+x terragrunt
