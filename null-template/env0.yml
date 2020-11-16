@@ -4,6 +4,7 @@ deploy:
     setupVariables:
       after: 
         - |
+            whoami
             apk add openssl
             openssl-dev version
             date
