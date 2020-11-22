@@ -1,2 +1,2 @@
-# blueprints 1
+# blueprints
 Public blueprints
