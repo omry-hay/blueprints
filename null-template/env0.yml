@@ -23,6 +23,7 @@ deploy:
             - kubectl version --client
             - tfenv --version
             - terraform --version
+            - echo "wow"
 destroy:
     onCompletion:
       - echo "destroy-onCompletion!!!"
