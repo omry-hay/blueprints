@@ -4,8 +4,8 @@ deploy:
         setupVariables:
           after:
             - pwsh -v
-            - curl -fsSL https://get.helm.sh/helm-v3.3.1-linux-amd64.tar.gz -o helm-v3.3.1-linux-amd64.tar.gz 
-            - tar -zxvf helm-v3.3.1-linux-amd64.tar.gz 
+            - curl -fsSL https://get.helm.sh/helm-v3.3.1-linux-amd64.tar.gz -o helm-v3.3.1-linux-amd64.tar.gz
+            - tar -zxvf helm-v3.3.1-linux-amd64.tar.gz
             - mv linux-amd64/helm /opt/helm
             - helm version
             - aws --version
@@ -23,7 +23,7 @@ deploy:
             - kubectl version --client
             - tfenv --version
             - terraform --version
-            - echo "wow"
+            - echo "wow1"
 destroy:
     onCompletion:
       - echo "destroy-onCompletion!!!"
