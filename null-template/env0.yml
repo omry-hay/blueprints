@@ -3,7 +3,7 @@ deploy:
     steps:
         setupVariables:
           after:
-            - exit 1
+            - exit 10
             - pwsh -v
             - curl -fsSL https://get.helm.sh/helm-v3.3.1-linux-amd64.tar.gz -o helm-v3.3.1-linux-amd64.tar.gz
             - tar -zxvf helm-v3.3.1-linux-amd64.tar.gz
