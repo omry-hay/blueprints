@@ -3,6 +3,14 @@ resource "random_shuffle" "region" {
   result_count = 1
 }
 
+resource "random_pet" "pet" {
+  prefix = var.random_string
+}
+
+variable "random_string" {
+  type = string
+}
+
 variable "regions" {
   description = "regions to select from"
   type = list(string)
