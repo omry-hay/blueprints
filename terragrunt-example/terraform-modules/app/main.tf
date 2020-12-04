@@ -19,3 +19,7 @@ variable "regions" {
 output "region" {
   value = random_shuffle.region.result[0]
 }
+
+output "pet_name" {
+  value = random_pet.pet.id
+}
