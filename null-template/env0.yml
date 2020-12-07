@@ -23,7 +23,7 @@ deploy:
             - kubectl version --client
             - tfenv --version
             - terraform --version
-            - echo "wow1"
+            - echo "wow2"
 destroy:
     onCompletion:
       - echo "destroy-onCompletion!!!"
