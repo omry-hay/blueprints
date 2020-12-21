@@ -4,10 +4,12 @@ deploy:
     setupVariables:
       after:
         - echo "credentials \"app.terraform.io\" { \n  token = \"${TF_CLOUD_TOKEN}\"\n}" > .terraformrc
+        - echo "$(<.terraformrc)"
 destroy:
   steps:
     setupVariables:
       after:
         - echo "credentials \"app.terraform.io\" { \n  token = \"${TF_CLOUD_TOKEN}\"\n}" > .terraformrc
+        - echo "$(<.terraformrc)"
   onCompletion:
     - echo "destroy-onCompletion!!!"
