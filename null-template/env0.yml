@@ -9,5 +9,3 @@ destroy:
     setupVariables:
       after:
         - cp .terraformrc ~
-  onCompletion:
-    - echo "destroy-onCompletion!!!"
