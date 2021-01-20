@@ -7,7 +7,7 @@ resource "spotinst_elastigroup_aws" "default-elastigroup" {
   max_size          = 4
   min_size          = 2
   desired_capacity  = 2
-  capacity_unit     = "weight"
+  capacity_unit     = "instance"
 
   region      = "us-east-1"
   subnet_ids  = ["subnet-2129ec00", "subnet-3ecc3761"]
