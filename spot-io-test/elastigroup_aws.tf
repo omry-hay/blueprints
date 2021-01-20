@@ -26,16 +26,6 @@ resource "spotinst_elastigroup_aws" "default-elastigroup" {
   instance_types_spot           = ["m3.xlarge", "m3.2xlarge"]
   instance_types_preferred_spot = ["m3.xlarge"]
 
-  instance_types_weights {
-    instance_type = "c3.large"
-    weight        = 10
-  }
-
-  instance_types_weights {
-    instance_type = "c4.xlarge"
-    weight        = 16
-  }
-
   orientation           = "balanced"
   fallback_to_ondemand  = false
   cpu_credits           = "unlimited"
