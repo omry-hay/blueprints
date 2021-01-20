@@ -5,7 +5,7 @@ deploy:
     setupVariables:
       after:
         - ./tags.sh
-destory:
+destroy:
   steps:
     setupVariables:
       after:
