@@ -62,6 +62,7 @@ resource "spotinst_elastigroup_aws" "default-elastigroup" {
     period             = 60
     evaluation_periods = 5
     cooldown           = 300
+    action_type        = "adjustment"
   }
 
   scaling_down_policy {
@@ -75,6 +76,7 @@ resource "spotinst_elastigroup_aws" "default-elastigroup" {
     period             = 60
     evaluation_periods = 10
     cooldown           = 300
+    action_type        = "adjustment"
   }
 
   tags {
