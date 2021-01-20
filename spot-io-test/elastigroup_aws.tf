@@ -5,7 +5,7 @@ resource "spotinst_elastigroup_aws" "default-elastigroup" {
   product     = "Linux/UNIX"
 
   max_size          = 4
-  min_size          = 1
+  min_size          = 2
   desired_capacity  = 2
   capacity_unit     = "weight"
 
