@@ -5,9 +5,9 @@ resource "spotinst_elastigroup_aws" "default-elastigroup" {
   product     = "Linux/UNIX"
 
   max_size          = 4
-  min_size          = 2
-  desired_capacity  = 1
-  capacity_unit     = "instance"
+  min_size          = 1
+  desired_capacity  = 2
+  capacity_unit     = "weight"
 
   region      = "us-east-1"
   subnet_ids  = ["subnet-2129ec00", "subnet-3ecc3761"]
