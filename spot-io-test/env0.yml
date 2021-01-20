@@ -1,5 +1,5 @@
-version:
-  type: 1
+version: 1
+
 deploy:
   steps:
     setupVariables:
