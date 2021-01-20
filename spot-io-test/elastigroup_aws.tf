@@ -6,7 +6,7 @@ resource "spotinst_elastigroup_aws" "default-elastigroup" {
 
   max_size          = 4
   min_size          = 2
-  desired_capacity  = 2
+  desired_capacity  = 3
   capacity_unit     = "instance"
 
   region      = "us-east-1"
