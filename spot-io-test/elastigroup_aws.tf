@@ -4,19 +4,16 @@ resource "spotinst_elastigroup_aws" "default-elastigroup" {
   description = "created by Terraform"
   product     = "Linux/UNIX"
 
-  max_size          = 0
-  min_size          = 0
-  desired_capacity  = 0
+  max_size          = 4
+  min_size          = 1
+  desired_capacity  = 2
   capacity_unit     = "weight"
 
-  region      = "us-west-2"
-  subnet_ids  = ["sb-123456", "sb-456789"]
+  region      = "us-east-1"
+  subnet_ids  = ["subnet-2129ec00", "subnet-3ecc3761"]
 
-  image_id              = "ami-a27d8fda"
-  iam_instance_profile  = "iam-profile"
-  key_name              = "my-key.ssh"
-  security_groups       = ["sg-123456"]
-  user_data             = "echo hello world"
+  image_id              = "ami-0d915a031cabac0e0"
+  security_groups       = ["sg-4d101f6c"]
   enable_monitoring     = false
   ebs_optimized         = false
   placement_tenancy     = "default"
