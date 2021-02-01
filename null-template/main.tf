@@ -4,11 +4,11 @@ resource "null_resource" "null" {
 resource "null_resource" "null2" {
 }
 
-output "omry" {
-  sensitive = false
+output "jFrog_sensitive" {
+  sensitive = true
   value = "omryhay"
 }
 
-output "omry1" {
+output "not_sensitive" {
   value = "omry1"
 }
