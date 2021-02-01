@@ -10,6 +10,5 @@ output "omry" {
 }
 
 output "omry1" {
-  sensitive = false
   value = "omry1"
 }
