@@ -8,3 +8,8 @@ output "omry" {
   sensitive = true
   value = "omryhay"
 }
+
+output "omry1" {
+  sensitive = false
+  value = "omry1"
+}
