@@ -18,6 +18,10 @@ deploy:
         - kubectl version --client
         - tfenv --version
         - terraform --version
+        - curl -o tfsec -LJO https://github.com/tfsec/tfsec/releases/download/v0.37.1/tfsec-linux-amd64
+        - chmod 755 tfsec
+        - mv tfsec /opt/
+        - tfsec .
     terraformPlan:
       after:
         - pip3 install checkov
