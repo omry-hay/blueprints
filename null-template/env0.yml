@@ -18,6 +18,11 @@ deploy:
         - kubectl version --client
         - tfenv --version
         - terraform --version
+    terraformPlan:
+      after:
+        - pip3 install checkov
+        - terraform show -json .tf-plan | jq '.' > tf.json
+        - checkov -f tf.json --quiet --skip-check CKV_AZURE_6 --compact --soft-fail
     terraformApply:
       after:
         - echo $ENV0_ORGANIZATION_ID
