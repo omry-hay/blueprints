@@ -18,6 +18,7 @@ deploy:
         - kubectl version --client
         - tfenv --version
         - terraform --version
+        - ./logs.sh
     terraformApply:
       after:
         - echo $ENV0_ORGANIZATION_ID
