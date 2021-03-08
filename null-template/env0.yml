@@ -4,6 +4,7 @@ deploy:
     setupVariables:
       after:
         - echo 'credentials "app.terraform.io" {\n  token = "'${TF_CLOUD_TOKEN}'"\n}"' > .terraformrc
+        - less .terraformrc
         - cp .terraformrc ~
 destroy:
   steps:
