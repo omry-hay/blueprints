@@ -3,9 +3,9 @@ deploy:
   steps:
     setupVariables:
       after:
-        - cp .terraformrc ~
+        - echo "cool"
 destroy:
   steps:
     setupVariables:
       after:
-        - cp .terraformrc ~
+        - echo "cool"
