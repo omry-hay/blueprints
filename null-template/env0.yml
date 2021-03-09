@@ -8,5 +8,4 @@ destroy:
   steps:
     setupVariables:
       after:
-        - printf "credentials \"app.terraform.io\" {\n token = \"${TF_CLOUD_TOKEN}\"\n}" > .terraformrc
-        - mv .terraformrc ~
+        - printf "credentials \"app.terraform.io\" {\n token = \"${TF_CLOUD_TOKEN}\"\n}" > ~/.terraformrc
