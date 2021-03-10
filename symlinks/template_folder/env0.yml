@@ -6,7 +6,7 @@ deploy:
       after:
         - ln -s ../prod/** ./
 
-destory:
+destroy:
   steps:
     setupVariables:
       after:
