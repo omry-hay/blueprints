@@ -4,4 +4,4 @@ deploy:
   steps:
     setupVariables:
       after:
-        - ln -s ../prod/** ./
+        - ln -s ../${ENV0_ENVIRONMENT_NAME}/** ./
