@@ -1,0 +1,13 @@
+version: 1
+
+deploy:
+  steps:
+    setupVariables:
+      after:
+        - ln -s ../prod/** ./
+
+destory:
+  steps:
+    setupVariables:
+      after:
+        - ln -s ../prod/** ./
