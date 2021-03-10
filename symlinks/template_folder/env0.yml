@@ -5,9 +5,3 @@ deploy:
     setupVariables:
       after:
         - ln -s ../prod/** ./
-
-destroy:
-  steps:
-    setupVariables:
-      after:
-        - ln -s ../prod/** ./
