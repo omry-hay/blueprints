@@ -3,6 +3,7 @@ deploy:
   steps:
     setupVariables:
       after:
+        - pip3 install ansible
         - aws --version
         - gcloud --version
         - az --version
@@ -13,20 +14,10 @@ deploy:
         - yarn --version
         - node --version
         - pip --version
-        - pip2 --version
         - pip3 --version
         - kubectl version --client
         - tfenv --version
         - terraform --version
-        - curl -o tfsec -LJO https://github.com/tfsec/tfsec/releases/download/v0.37.1/tfsec-linux-amd64
-        - chmod 755 tfsec
-        - mv tfsec /opt/
-        - tfsec .
-    terraformPlan:
-      after:
-        - pip3 install checkov
-        - terraform show -json .tf-plan | jq '.' > tf.json
-        - checkov -f tf.json --quiet --skip-check CKV_AZURE_6 --compact --soft-fail
     terraformApply:
       after:
         - echo $ENV0_ORGANIZATION_ID
