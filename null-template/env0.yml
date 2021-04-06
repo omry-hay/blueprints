@@ -4,6 +4,7 @@ deploy:
     setupVariables:
       after:
         - pip3 install ansible==2.9.0
+        - ansible --version
         - aws --version
         - gcloud --version
         - az --version
