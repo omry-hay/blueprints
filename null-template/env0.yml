@@ -4,6 +4,7 @@ deploy:
     setupVariables:
       after:
         - infracost --version
+        - echo $INFRACOST_API_KEY
     terraformPlan:
       after:
         - terraform show -json .tf-plan > plan.json
