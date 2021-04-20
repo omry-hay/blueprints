@@ -3,8 +3,8 @@ deploy:
   steps:
     setupVariables:
       after:
-        - infracost --version
         - echo $INFRACOST_API_KEY
+        - infracost --version
     terraformPlan:
       after:
         - terraform show -json .tf-plan > plan.json
