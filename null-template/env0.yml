@@ -3,42 +3,12 @@ deploy:
   steps:
     setupVariables:
       after:
-        - aws --version
-        - gcloud --version
-        - az --version
-        - python --version
-        - python3 --version
-        - git --version
-        - npm --version
-        - yarn --version
-        - node --version
-        - pip --version
-        - pip2 --version
-        - pip3 --version
-        - kubectl version --client
-        - tfenv --version
-        - terraform --version
+        - infracost --version
+    terraformPlan:
+      after:
+        - terraform show -json .tf-plan > plan.json
+        - infracost breakdown --path plan.json
+        - infracost diff --path plan.json
     terraformApply:
       after:
         - echo $ENV0_ORGANIZATION_ID
-        - echo $ENV0_ENVIRONMENT_ID
-        - echo $ENV0_ENVIRONMENT_NAME
-        - echo $ENV0_PROJECT_ID
-        - echo $ENV0_DEPLOYMENT_LOG_ID
-        - echo $ENV0_WORKSPACE_NAME
-        - echo $ENV0_BLUEPRINT_ID
-        - echo $ENV0_BLUEPRINT_NAME
-destroy:
-  onCompletion:
-    - echo "destroy-onCompletion!!!"
-  steps:
-    terraformDestroy:
-      after:
-        - echo $ENV0_ORGANIZATION_ID
-        - echo $ENV0_ENVIRONMENT_ID
-        - echo $ENV0_ENVIRONMENT_NAME
-        - echo $ENV0_PROJECT_ID
-        - echo $ENV0_DEPLOYMENT_LOG_ID
-        - echo $ENV0_WORKSPACE_NAME
-        - echo $ENV0_BLUEPRINT_ID
-        - echo $ENV0_BLUEPRINT_NAME
