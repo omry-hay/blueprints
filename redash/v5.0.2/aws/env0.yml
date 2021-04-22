@@ -10,7 +10,7 @@ deploy:
         - pip3 install checkov==2.0.48
     terraformPlan:
       after:
-        - terraform show -json .tf-plan > plan.json
+        - terraform show -json .tf-plan | jq '.' > plan.json
         - infracost breakdown --path plan.json
         - infracost diff --path plan.json
         #- checkov -f plan.json --quiet --skip-check CKV_AWS_79
