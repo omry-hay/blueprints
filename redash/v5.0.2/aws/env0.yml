@@ -7,7 +7,7 @@ deploy:
         - curl -s -L https://github.com/infracost/infracost/releases/latest/download/infracost-linux-amd64.tar.gz | tar xz
         - mv infracost-linux-amd64 /opt/infracost
         - pip3 install ansible==2.9.0
-        - pip3 install checkov=2.0.48
+        - pip3 install checkov==2.0.48
     terraformPlan:
       after:
         - terraform show -json .tf-plan > plan.json
