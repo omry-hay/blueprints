@@ -1,0 +1,17 @@
+version: 1
+
+deploy:
+  steps:
+    setupVariables:
+      after:
+        - curl -s -L https://github.com/infracost/infracost/releases/latest/download/infracost-linux-amd64.tar.gz | tar xz
+        - mv infracost-linux-amd64 /opt/infracost
+        - pip3 install ansible==2.9.0
+        - pip3 install checkov=2.0.48
+    terraformPlan:
+      after:
+        - terraform show -json .tf-plan > plan.json
+        - infracost breakdown --path plan.json
+        - infracost diff --path plan.json
+        #- checkov -f plan.json --quiet --skip-check CKV_AWS_79
+        - checkov -f plan.json --quiet --skip-check CKV_AWS_79 || echo 'Checkov security checks failed - ' $(checkov -f plan.json --quiet --skip-check CKV_AWS_79 | grep 'Passed checks:') 1>&2 && exit 1
