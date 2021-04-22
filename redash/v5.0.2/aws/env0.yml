@@ -14,4 +14,4 @@ deploy:
         - infracost breakdown --path plan.json
         - infracost diff --path plan.json
         #- checkov -f plan.json --quiet --skip-check CKV_AWS_79
-        - checkov -f plan.json --quiet --skip-check CKV_AWS_24,CKV_AWS_135,CKV_AWS_8,CKV_AWS_126 || echo 'Checkov security checks failed - ' $(checkov -f plan.json --quiet --skip-check CKV_AWS_24,CKV_AWS_135,CKV_AWS_8,CKV_AWS_126 | grep 'Passed checks:') 1>&2 && exit 1
+        - checkov -f plan.json --quiet --skip-check CKV_AWS_24,CKV_AWS_135,CKV_AWS_8,CKV_AWS_126,CKV_AWS_79 || echo 'Checkov security checks failed - ' $(checkov -f plan.json --quiet --skip-check CKV_AWS_24,CKV_AWS_135,CKV_AWS_8,CKV_AWS_126,CKV_AWS_79 | grep 'Passed checks:') 1>&2 && exit 1
