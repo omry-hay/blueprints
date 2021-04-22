@@ -24,7 +24,7 @@ resource "aws_subnet" "redash-subnet" {
   vpc_id            = aws_vpc.redash-vpc.id
 
   tags = {
-      Name = "redahs-subnet-${random_uuid.uuid.result}",
+      Name = "redahs-subnet-${random_uuid.uuid.result}"
       CreatedBy = "env0"
   }
 }
@@ -39,7 +39,7 @@ resource "aws_internet_gateway" "redash-ig" {
 }
 
 resource "aws_route_table" "redash-rt" {
-  vpc_id = ${aws_vpc.redash-vpc.id}
+  vpc_id = aws_vpc.redash-vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
