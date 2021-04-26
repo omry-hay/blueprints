@@ -17,7 +17,6 @@ deploy:
         - pip3 --version
         - kubectl version --client
         - tfenv --version
-        - terraform --version
     terraformApply:
       after:
         - echo $ENV0_ORGANIZATION_ID
