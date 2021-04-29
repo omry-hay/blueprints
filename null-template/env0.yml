@@ -8,8 +8,6 @@ deploy:
     terraformPlan:
       after:
         - terraform show -json .tf-plan > plan.json
-        - infracost breakdown --path plan.json
-        - infracost diff --path plan.json
     terraformApply:
       after:
         - echo $ENV0_ORGANIZATION_ID
