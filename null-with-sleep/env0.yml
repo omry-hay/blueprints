@@ -7,3 +7,10 @@ deploy:
         - echo "Sleeping..."
         - sleep 21600
         - echo "Good morning!"
+destroy:
+  steps:
+    setupVariables:
+      after: 
+        - echo "Sleeping..."
+        - sleep 21600
+        - echo "Good morning!"
