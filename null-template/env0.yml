@@ -18,7 +18,7 @@ deploy:
             - pip3 --version
             - kubectl version --client
             - tfenv --version
-            - echo "wow2"
+            - echo "wow2 2"
 destroy:
     onCompletion:
       - echo "destroy-onCompletion!!!"
