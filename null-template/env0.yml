@@ -18,7 +18,6 @@ deploy:
             - pip3 --version
             - kubectl version --client
             - tfenv --version
-            - terraform --version
             - echo "wow2"
 destroy:
     onCompletion:
