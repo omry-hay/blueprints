@@ -4,4 +4,4 @@ deploy:
   steps:
     terraformPlan:
       after:
-        - infracost breakdown -p .tf-plan --format json
+        - echo "home"
