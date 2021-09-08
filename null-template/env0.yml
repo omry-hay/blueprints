@@ -3,13 +3,7 @@ deploy:
   steps:
     setupVariables:
       after:
-        - echo $INFRACOST_API_KEY
-        - infracost --version
-    terraformPlan:
-      after:
-        - terraform show -json .tf-plan > plan.json
-        - infracost breakdown --path plan.json
-        - infracost diff --path plan.json
-    terraformApply:
-      after:
-        - echo $ENV0_ORGANIZATION_ID
+        - printf "%s" "$(<env0.auto.tfvars.json)"
+        - printf "%s" "$(<env0.env-vars.json)"
+        - printf "%s" "$(<env0.configurations.json)"
+        - printf "%s" "$(<env0.system-env-vars.json)"
