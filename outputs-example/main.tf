@@ -13,3 +13,8 @@ output "var_output" {
 output "my_output" {
   value = "env0_${random_id.id.dec}"
 }
+
+output "my_output_2" {
+  value = "env0_${random_id.id.dec}"
+  sensetive = true
+}
