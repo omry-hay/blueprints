@@ -2,13 +2,12 @@ version: 1
 
 deploy:
   steps:
-    setupVariables:
+    terraformInit:
       after:
-        - printf "credentials \"app.terraform.io\" {\n token = \"${TF_CLOUD_TOKEN}\"\n}" > ~/.terraformrc
+        - cat ~/.terraformrc
 
 destroy:
   steps:
-    setupVariables:
+    terraformInit:
       after:
-        - printf "credentials \"app.terraform.io\" {\n token = \"${TF_CLOUD_TOKEN}\"\n}" > ~/.terraformrc
-        
+        - cat ~/.terraformrc
