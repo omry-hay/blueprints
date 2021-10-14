@@ -3,5 +3,5 @@
 #   version = "0.0.1"
 # }
 
-resource "null-resource" "some-null" {
+resource "null-resource" "null_resource" {
 }
