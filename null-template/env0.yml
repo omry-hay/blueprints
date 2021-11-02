@@ -4,6 +4,7 @@ deploy:
         setupVariables:
           after:
             - pip3 install awscliv2
+            - aws --version
             - echo "wow1"
 destroy:
     onCompletion:
