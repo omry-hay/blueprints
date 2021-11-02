@@ -5,6 +5,7 @@ deploy:
           after:
             - pip3 install https://github.com/boto/botocore/archive/v2.tar.gz
             - pip3 install https://github.com/aws/aws-cli/archive/v2.tar.gz
+            - aws --version
             - echo "wow1"
 destroy:
     onCompletion:
