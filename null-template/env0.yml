@@ -3,22 +3,7 @@ deploy:
     steps:
         setupVariables:
           after:
-            - pwsh -v
-            - aws --version
-            - gcloud --version
-            - az --version
-            - python --version
-            - python3 --version
-            - git --version
-            - npm --version
-            - yarn --version
-            - node --version
-            - pip --version
-            - pip2 --version
-            - pip3 --version
-            - kubectl version --client
-            - tfenv --version
-            - terraform --version
+            - pip3 install awscliv2
             - echo "wow1"
 destroy:
     onCompletion:
