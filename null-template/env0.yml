@@ -4,7 +4,7 @@ deploy:
     setupVariables:
       after: 
         - |
-            git clone --recursive  --depth 1 --branch 2.3.3 --single-branch https://github.com/aws/aws-cli.git
+            git clone --recursive  --depth 1 --branch 2.1.39 --single-branch https://github.com/aws/aws-cli.git
             cd aws-cli
             ls
             pip3 install --ignore-installed -r requirements.txt
