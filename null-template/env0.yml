@@ -5,6 +5,7 @@ deploy:
       after: 
         - |
             curl https://awscli.amazonaws.com/awscli-2.2.1.tar.gz | tar -xz
+            ls
             cd awscli-2.2.1
             ./configure --prefix=/opt/aws-cli/ --with-download-deps
             make 
