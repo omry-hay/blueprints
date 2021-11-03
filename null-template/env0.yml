@@ -3,15 +3,15 @@ deploy:
   steps:
     setupVariables:
       after: 
-        |
-          git clone --recursive  --depth 1 --branch v2 --single-branch  https://github.com/aws/aws-cli.git
-          cd aws-cli
-          ls
-          pip3 install --ignore-installed -r requirements.txt
-          pip3 install -e .
-          aws --version
-          ./aws --version
-           echo "wow1"
+        - |
+            git clone --recursive  --depth 1 --branch v2 --single-branch  https://github.com/aws/aws-cli.git
+            cd aws-cli
+            ls
+            pip3 install --ignore-installed -r requirements.txt
+            pip3 install -e .
+            aws --version
+            ./aws --version
+            echo "wow1"
 destroy:
   onCompletion:
     - echo "destroy-onCompletion!!!"
