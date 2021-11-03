@@ -3,11 +3,11 @@ deploy:
     steps:
         setupVariables:
           after:
-            - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            - unzip awscliv2.zip
-            - ./aws/install -i /opt/aws-cli -b /opt/bin
-            - /opt/aws-cli/aws --version
-            - ls /opt/aws-cli
+            - git clone --recursive  --depth 1 --branch v2 --single-branch  https://github.com/aws/aws-cli.git
+            - pip3 install --ignore-installed -r requirements.txt
+            - pip3 install -e .
+            - aws --version
+            - ./aws --version
             - echo "wow1"
 destroy:
     onCompletion:
