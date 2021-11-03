@@ -4,12 +4,14 @@ deploy:
     setupVariables:
       after: 
         - |
-            curl https://awscli.amazonaws.com/awscli-2.2.1.tar.gz | tar -xz
+            git clone --recursive  --depth 1 --branch 2.2.0 --single-branch https://github.com/aws/aws-cli.git
+            cd aws-cli
             ls
-            cd awscli-2.2.1
-            ./configure --prefix=/opt/aws-cli/ --with-download-deps
-            make 
-            make install
+            pip3 install --ignore-installed -r requirements.txt
+            pip3 install -e .
+            aws --version
+            ./aws --version
+            echo "wow1"
 destroy:
   onCompletion:
     - echo "destroy-onCompletion!!!"
