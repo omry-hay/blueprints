@@ -3,6 +3,7 @@ deploy:
   steps:
     setupVariables:
       after:
+        - aws sts get-caller-identity
         - aws s3 ls
     terraformPlan:
       after:
