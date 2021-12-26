@@ -3,8 +3,7 @@ deploy:
   steps:
     setupVariables:
       after:
-        - aws sts get-caller-identity
-        - aws s3 ls
+        - aws --version
     terraformPlan:
       after:
         - cat env0.auto.tfvars.json
