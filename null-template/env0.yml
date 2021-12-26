@@ -4,6 +4,7 @@ deploy:
     setupVariables:
       after:
         - aws --version
+        - aws --version
     terraformPlan:
       after:
         - cat env0.auto.tfvars.json
