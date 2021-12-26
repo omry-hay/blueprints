@@ -8,4 +8,3 @@ deploy:
     terraformPlan:
       after:
         - cat env0.auto.tfvars.json
-        - cat env0.env-vars.json
