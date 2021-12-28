@@ -19,3 +19,27 @@ resource "aws_ebs_volume" "web_host_storage" {
     yor_trace            = "c5509daf-10f0-46af-9e03-41989212521d"
   })
 }
+
+resource "aws_s3_bucket" "this" {
+  bucket = var.bucket_name
+  acl    = "public"
+
+  versioning {
+    enabled = true
+  }
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "aws_dynamodb_table" "this" {
+  name         = var.table_name
+  hash_key     = "LockID"
+  billing_mode = "PAY_PER_REQUEST"
+
+  attribute {
+    name = "LockID"
+    type = "S"
+  }
+}
