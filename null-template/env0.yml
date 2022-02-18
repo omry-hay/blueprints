@@ -4,3 +4,4 @@ deploy:
     setupVariables:
       after:
         - sudo apk add rsync
+        - rsync --version
