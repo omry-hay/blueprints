@@ -92,6 +92,6 @@ output "default_site_hostname" {
   value = "${azurerm_app_service.dockerapp.default_site_hostname}"
 }
 
-output "default_site_hostname" {
+output "default_site_hostname2" {
   value = "${azurerm_app_service.dockerapp2.default_site_hostname}"
 }
