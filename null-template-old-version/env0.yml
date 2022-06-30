@@ -1,0 +1,7 @@
+version: 1
+
+deploy:
+  steps:
+    terraformInit:
+      before:
+        - printf "credentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN_app_terraform_io}\"\n}" > .terraformrc
