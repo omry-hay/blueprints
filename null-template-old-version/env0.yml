@@ -5,3 +5,4 @@ deploy:
     terraformInit:
       before:
         - printf "credentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN_app_terraform_io}\"\n}" > /home/node/.terraformrc
+        - /opt/tfenv/bin/terraform init
