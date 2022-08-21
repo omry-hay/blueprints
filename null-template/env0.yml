@@ -21,6 +21,7 @@ deploy:
         - infracost --version
     terraformApply:
       after:
+        - cat /home/node/.terraformrc
         - echo $ENV0_ORGANIZATION_ID
         - echo $ENV0_ENVIRONMENT_ID
         - echo $ENV0_ENVIRONMENT_NAME
