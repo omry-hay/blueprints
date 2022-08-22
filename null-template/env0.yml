@@ -4,7 +4,6 @@ deploy:
     setupVariables:
       after:
         - ls
-        - cat omry.txt
         - echo "omry" > omry.txt
         - cat omry.txt
     terraformApply:
