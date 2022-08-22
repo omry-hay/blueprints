@@ -11,7 +11,7 @@ output "jFrog_sensitive" {
 
 module "null-tamplate" {
   source  = "app.terraform.io/env0-prod/null-tamplate/env0"
-  version = "0.0.3"
+  version = "0.0.2"
 }
 
 output "not_sensitive" {
