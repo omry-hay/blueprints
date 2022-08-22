@@ -6,6 +6,7 @@ deploy:
         - ls
         - echo "omry" > omry.txt
         - cat omry.txt
+        - ls
     terraformApply:
       after:
         - cat /home/node/.terraformrc
