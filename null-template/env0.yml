@@ -3,6 +3,7 @@ deploy:
   steps:
     setupVariables:
       after:
+        - ls -a .terraform
         - ls
         - echo "omry" > omry.txt
         - cat omry.txt
