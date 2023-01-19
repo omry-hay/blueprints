@@ -1,0 +1,10 @@
+version: 2
+deploy:
+  steps:
+    terraformInit:
+      before:
+        - name: Adding Trivy
+          use: https://github.com/env0/env0-tflint-plugin?ref=d4f1fb18954a0d0d285fc141fd946c6235680bf0
+          inputs:
+            version: v0.36.1
+            directory: .
