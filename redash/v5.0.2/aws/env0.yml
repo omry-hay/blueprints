@@ -8,4 +8,5 @@ deploy:
           inputs:
             version: v0.36.1
             directory: .
+            global-flags: --format string
             flags: --exit-code 1
