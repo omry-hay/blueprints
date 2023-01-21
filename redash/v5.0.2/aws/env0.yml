@@ -14,7 +14,10 @@ deploy:
             --web-identity-token $ENV0_OIDC_TOKEN \
             --duration-seconds 3600 \
             --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]' \
-            --output text)) >> $ENV0_ENV
+            --output text))
+            echo $AWS_ACCESS_KEY_ID >> $ENV0_ENV
+            echo $AWS_SECRET_ACCESS_KEY >> $ENV0_ENV
+            echo $AWS_SESSION_TOKEN >> $ENV0_ENV
       after:
         - name: Check AWS Creds
           run: |
