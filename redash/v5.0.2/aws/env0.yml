@@ -15,7 +15,6 @@ deploy:
             --duration-seconds 3600 \
             --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]' \
             --output text)) >> $ENV0_ENV
-    terraformInit:
       after:
         - name: Check AWS Creds
           run: |
