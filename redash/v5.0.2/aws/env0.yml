@@ -8,9 +8,9 @@ deploy:
         - name: Using AWS CLI
           run: | 
             aws sts assume-role-with-web-identity --role-arn "arn:aws:iam::170412844252:role/env0_oidc_role" --role-session-name "env0_OIDC_session" --web-identity-token $ENV0_OIDC_TOKEN --duration-seconds 3600 --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]' --output json > aws-sts-get-session-token.json
-            export AWS_ACCESS_KEY_ID=$(jq '.[0]' aws-sts-get-session-token.json); echo AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID >> $ENV0_ENV
-            export AWS_SECRET_ACCESS_KEY=$(jq '.[1]' aws-sts-get-session-token.json); echo AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY >> $ENV0_ENV
-            export AWS_SESSION_TOKEN=$(jq '.[2]' aws-sts-get-session-token.json); echo AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN >> $ENV0_ENV
+            echo AWS_ACCESS_KEY_ID=$(jq '.[0]' aws-sts-get-session-token.json) >> $ENV0_ENV
+            echo AWS_SECRET_ACCESS_KEY=$(jq '.[1]' aws-sts-get-session-token.json) >> $ENV0_ENV
+            echo AWS_SESSION_TOKEN=$(jq '.[2]' aws-sts-get-session-token.json) >> $ENV0_ENV
       after:
         - name: Check AWS Creds
           run: |
