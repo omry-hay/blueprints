@@ -3,10 +3,5 @@ deploy:
   steps:
     terraformInit:
       before:
-        - name: Adding Trivy
-          use: https://github.com/env0/env0-trivy-plugin
-          inputs:
-            version: v0.36.1
-            directory: .
-            global-flags: --format table
-            flags: --exit-code 1
+        - name: Set OIDC 
+          run: echo $ENV0_OIDC_TOKEN > web-identity-token.txt
