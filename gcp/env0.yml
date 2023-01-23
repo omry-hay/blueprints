@@ -1,0 +1,7 @@
+version: 2
+deploy:
+  steps:
+    setupVariables:
+      before:
+        - name: Set OIDC Token For GCP
+          run: echo $ENV0_OIDC_TOKEN > env0.oidc.token
