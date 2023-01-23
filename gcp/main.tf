@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("env0-client-configuration.json")
+  credentials = file("env0-client-library-config.json")
 
   project = "env0project"
   region  = "us-central1"
