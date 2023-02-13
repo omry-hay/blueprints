@@ -19,12 +19,12 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "env0-test-assume-role"
+    bucket         = "assume-role-remote-backend"
     encrypt        = "true"
     key            = "terraform.tfstate"
     region         = "us-east-1"
-    role_arn       = "arn:aws:iam::031993550471:role/terraform"
-    external_id    = "16bbfcf6-a4c4-4e01-bfcd-48233d3e63e5"
+    role_arn       = "arn:aws:iam::779182809717:role/env0-assume-role-for-remote-backend"
+    external_id    = "a65a1705-183f-4222-9e8e-dca3a48b6f7e"
   }
 }
 
