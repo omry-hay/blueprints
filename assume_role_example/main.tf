@@ -22,6 +22,7 @@ terraform {
     bucket         = "env0-test-assume-role"
     encrypt        = "true"
     key            = "terraform.tfstate"
+    region         = "us-east-1"
     role_arn       = "arn:aws:iam::031993550471:role/terraform"
     external_id    = "16bbfcf6-a4c4-4e01-bfcd-48233d3e63e5"
   }
