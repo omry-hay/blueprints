@@ -11,9 +11,9 @@ terraform {
 provider "aws" {
   region = "us-east-1"
   assume_role {
-    role_arn     = "arn:aws:iam::779182809717:role/env0_test_assume_role"
+    role_arn     = "arn:aws:iam::244172364962:role/env0_test_assume_role"
     session_name = "env0_session"
-    external_id  = "16bbfcf6-a4c4-4e01-bfcd-48233d3e63e5"
+    external_id  = "15c62b18-98d4-49ee-8a05-5c118ae50929"
   }
 }
 
