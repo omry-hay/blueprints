@@ -3,7 +3,7 @@ data "github_repository" "omry_repo" {
 }
 
 resource "github_branch" "vpc" {
-  repository = data.github_repository.omry_repo.name
+  repository = data.github_repository.omry_repo.full_name
   branch     = module.vpc.name
 }
 
