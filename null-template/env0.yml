@@ -8,7 +8,9 @@ deploy:
         - sudo apk add go
         - git clone https://github.com/Checkmarx/kics.git 
         - cd kics; go build -o ./bin/kics cmd/console/main.go
-        - cp kics/bin/kics ./
         - ls
         - cd kics; mv ./bin/kics /opt
+        - cp /opt/kics ./
+        - ls 
+        - ls /opt
         - kics version
