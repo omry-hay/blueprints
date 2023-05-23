@@ -1,0 +1,12 @@
+version: 1
+deploy:
+  steps:
+    setupVariables:
+      after:
+        - ls /opt
+        - ls
+        - sudo apk add go
+        - git clone https://github.com/Checkmarx/kics.git 
+        - cd kics; go build -o ./bin/kics cmd/console/main.go
+        - cd kics; cp ./bin/kics ../; mv ./bin/kics /opt
+        - kics version
