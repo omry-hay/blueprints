@@ -5,6 +5,7 @@ deploy:
       after:
         - tfenv --version
         - infracost --version
+        
 destroy:
   onCompletion:
     - echo "destroy-onCompletion!!!"
