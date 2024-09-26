@@ -25,7 +25,7 @@ provider "kubernetes"{}
 
 provider "azurerm" {}
 
-provider "auth0" {}
+provider "helm" {}
 
 provider "env0" {}
 
