@@ -17,5 +17,5 @@ data "aws_iam_role" "example" {
 }
 
 output "iam_role_arn" {
-  value = aws_iam_role.example.arn
+  value = data.aws_iam_role.example.arn
 }
